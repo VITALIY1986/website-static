@@ -43,5 +43,18 @@ module.exports = {
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+              plugins: [`gatsby-remark-bulma`],
+            },
+          },
+          {
+            resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+            options: {
+              develop: true, // Activates purging in npm run develop
+              purgeOnly: ['/all.scss'], // applies purging only on the bulma css file
+            },
+          },
     ],
 }
